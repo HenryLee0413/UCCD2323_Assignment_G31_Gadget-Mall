@@ -113,11 +113,11 @@ $(function () {
         const $prev = $slider.find(".prev");
         const $next = $slider.find(".next");
         const $dotsContainer = $slider.find(".dots");
-        let currentIndex = 0;
+        let currentindex = 0;
 
         $slides.each((i) => {
             const $dot = $("<span>").on("click", () => {
-                currentIndex = i;
+                currentindex = i;
                 updateSlides();
             });
             $dotsContainer.append($dot);
@@ -126,17 +126,17 @@ $(function () {
         const $dots = $dotsContainer.find("span");
 
         function updateSlides() {
-            $slides.removeClass("active").eq(currentIndex).addClass("active");
-            $dots.removeClass("active").eq(currentIndex).addClass("active");
+            $slides.removeClass("active").eq(currentindex).addClass("active");
+            $dots.removeClass("active").eq(currentindex).addClass("active");
         }
 
         $prev.on("click", () => {
-            currentIndex = (currentIndex - 1 + $slides.length) % $slides.length;
+            currentindex = (currentindex - 1 + $slides.length) % $slides.length;
             updateSlides();
         });
 
         $next.on("click", () => {
-            currentIndex = (currentIndex + 1) % $slides.length;
+            currentindex = (currentindex + 1) % $slides.length;
             updateSlides();
         });
 

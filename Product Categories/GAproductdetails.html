@@ -651,7 +651,7 @@
             const prev = slider.querySelector('.prev');
             const next = slider.querySelector('.next');
             const dotsContainer = slider.querySelector('.dots');
-            let currentIndex = 0;
+            let currentindex = 0;
 
             // Create dots
             slides.forEach((_, index) => {
@@ -665,22 +665,22 @@
             const dots = slider.querySelectorAll('.dot');
 
             function showSlide(index) {
-                slides[currentIndex].classList.remove('active');
-                dots[currentIndex].classList.remove('active');
-                currentIndex = index;
-                slides[currentIndex].classList.add('active');
-                dots[currentIndex].classList.add('active');
+                slides[currentindex].classList.remove('active');
+                dots[currentindex].classList.remove('active');
+                currentindex = index;
+                slides[currentindex].classList.add('active');
+                dots[currentindex].classList.add('active');
             }
 
             prev.addEventListener('click', () => {
-                let newIndex = currentIndex - 1;
-                if (newIndex < 0) newIndex = slides.length - 1;
-                showSlide(newIndex);
+                let newindex = currentindex - 1;
+                if (newindex < 0) newindex = slides.length - 1;
+                showSlide(newindex);
             });
 
             next.addEventListener('click', () => {
-                let newIndex = (currentIndex + 1) % slides.length;
-                showSlide(newIndex);
+                let newindex = (currentindex + 1) % slides.length;
+                showSlide(newindex);
             });
         }
 
